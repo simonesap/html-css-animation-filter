@@ -119,12 +119,46 @@
 /*----------Exercise-10----------*/
 .ex-10-icon {
     font-size: 60px;
+    animation-name: spin ;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+
+    0% {
+        transform: rotate(360deg);
+    }
 }
 /*----------Exercise-10----------*/
 
-.ex-11-icon {
+/*----------Exercise-11----------*/
+.ex-11-icon{
     font-size: 60px;
 }
+
+.ex-11-icon:hover {
+    animation-name: spin-2 ;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-2{
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotateZ(300deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+/*----------Exercise-11----------*/
+
+/*----------Exercise-12-13----------*/
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -138,6 +172,7 @@
     text-align: center;
     text-decoration: none;
 }
+
 .ex-12-top-white, .ex-13-top-white {
     position: absolute;
     top: -10px;
@@ -151,6 +186,64 @@
     bottom: -10px;
     right: 20%;
     background: #f5f5f5;
-    width: 60px;
+    width: 40px;
     height: 20px;
 }
+
+.ex-12-button .ex-12-bottom-white{
+    animation: white-line 2s linear infinite;
+}
+@keyframes white-line{
+    0% {
+        right: 10%;
+    }
+    50% {
+        right: calc(100% - 40px);
+    }
+    100% {
+        right: 10%;
+    }
+}
+
+.ex-13-button .ex-13-top-white{
+    animation: white-line-top 2s linear infinite;
+}
+
+@keyframes white-line-top{
+    0%{
+        left: 10%;
+    }
+    25%{
+        left: 20%;
+    }
+    50%{
+        left: 40%;
+    }
+    75%{
+        left: 80%;}
+    100%{
+        left: 100%;
+    }
+}
+
+.ex-13-button .ex-13-bottom-white{
+    animation: white-line-bottom 2s linear infinite;
+}
+
+@keyframes white-line-bottom{
+    0%{
+        right: 10%;
+    }
+    25%{
+        right: 20%;
+    }
+    50%{
+        right: 40%;
+    }
+    75%{
+        right: 80%;}
+    100%{
+        right: 100%;
+    }
+}
+/*----------Exercise-12-13----------*/
